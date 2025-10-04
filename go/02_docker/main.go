@@ -43,7 +43,7 @@ func main() {
 	//ほかのルーティングもここで登録可能
 
 	//サーバー起動
-	if err := http.ListenAndServe(":8081", mux); err != nil {
+	if err := http.ListenAndServe(":8080", mux); err != nil {
 		fmt.Println("Error starting server:", err)
 	}
 }
