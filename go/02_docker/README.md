@@ -27,3 +27,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /goapp .
     # Exec形式（`echo`がPID1になる）
     ENTRYPOINT ["echo", "TEST"]
     ```
+
+### その他プラクティス系
+https://zenn.dev/isawa/articles/a721641613f013
+https://speakerdeck.com/devops_vtj/jin-sarawen-kenaidockerru-men-dockerfilenobesutopurakuteisubian

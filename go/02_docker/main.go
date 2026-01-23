@@ -13,6 +13,8 @@ type response struct {
 	Data	string `json:"data,omitempty"`
 }
 
+
+
 func Handler(w http.ResponseWriter, r *http.Request) {
 	//レスポンスヘッダーの設定
 	w.Header().Set("Content-Type", "application/json")

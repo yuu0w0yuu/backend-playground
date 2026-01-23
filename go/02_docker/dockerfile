@@ -3,20 +3,23 @@ FROM golang:1.25.1-alpine AS builder
 
 WORKDIR /app
 
+# 依存関係のキャッシュ用に先にgo.modをコピー
 COPY go.mod .
 RUN go mod download
 
+# ソースコードをコピー
 COPY . .
 
-#カレントディレクトリを/goappでビルド
-RUN CGO_ENABLED=0 GOOS=linux go build -o /goapp .
+#カレントディレクトリを/appでビルド
+RUN CGO_ENABLED=0 GOOS=linux go build -o server
 
 ### Final Stage
-FROM alpine:latest
-RUN apk --no-cache add ca-certificates
+FROM gcr.io/distroless/base-debian12
+WORKDIR /app
 
-COPY --from=builder /goapp /usr/local/bin/goapp
+# セキュリティ向上のため、非特権ユーザーで実行
+USER 65532
 
+COPY --from=builder /app/server .
 EXPOSE 8080
-
-ENTRYPOINT ["/usr/local/bin/goapp"]
+ENTRYPOINT ["./server"]
