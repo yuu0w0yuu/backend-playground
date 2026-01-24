@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/gorilla/mux"
 )
 
 // クエリパラメータから名前を取得して挨拶を返すハンドラ
@@ -25,7 +27,7 @@ func GreetHandler(w http.ResponseWriter, r *http.Request) {
 func UserHandler(w http.ResponseWriter, r *http.Request) {
 	path := strings.TrimPrefix(r.URL.Path, "/api/user/")
 
-	userid, err := strconv.Atoi(path)
+	userid, err := strconv.Atoi(mux.Vars(r)["id"])
 	if err != nil {
 		http.Error(w, "Invalid user ID: " + path, http.StatusBadRequest)
 		return

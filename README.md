@@ -1,10 +1,9 @@
-# 開発環境セットアップ
+# About
+バックエンド開発学習・検証用プロジェクト
+
+# 開発環境
 Dev Containerを利用する
 
-
-# Tips
+# Memo
 ## gitignoreの生成
 https://www.toptal.com/developers/gitignore
-
-## アーキテクチャ
-https://github.com/evrone/go-clean-template

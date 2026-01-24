@@ -1,4 +1,4 @@
-module go-middle
+module 04_middleware
 
 go 1.25.1
 
