@@ -1,0 +1,12 @@
+services:
+  backend-playground:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace/backend-playground:cached
+      - mise:/root/.mise
+    command: sleep infinity
+
+volumes:
+  mise:

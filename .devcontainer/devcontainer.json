@@ -1,0 +1,27 @@
+{
+	"name": "backend-playground",
+	"dockerComposeFile": "./docker-compose.yml",
+	"service": "backend-playground",
+	"workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				
+			]
+		}
+	},
+	"features": {
+		// Common
+		"ghcr.io/devcontainers/features/github-cli": {},
+		"ghcr.io/stu-bell/devcontainer-features/gemini-cli": {},
+		"ghcr.io/devcontainers/features/docker-in-docker": {},
+		"ghcr.io/larsnieuwenhuizen/features/jqyq": {},
+
+		// Go
+
+		// TypeScript
+		"ghcr.io/devcontainers-extra/features/prettier": {}
+			
+	},	
+	"remoteUser": "root"
+}
