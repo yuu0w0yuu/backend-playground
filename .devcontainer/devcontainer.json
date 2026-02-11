@@ -6,6 +6,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"ms-azuretools.vscode-containers",
+				"google.gemini-code-assist",
 				"google.gemini-cli-vscode-ide-companion"
 			]
 		}
